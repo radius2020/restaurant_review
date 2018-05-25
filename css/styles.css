@@ -32,9 +32,16 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0 0 20px;
 }
-article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup,  nav {
 	display: block;
 }
+
+/* ---------moved section out of the "display: block" group above , including article, aside, etc ------*/
+.section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 #maincontent {
   background-color: #f3f3f3;
   min-height: 100%;
@@ -65,6 +72,8 @@ nav h1 a {
   letter-spacing: 10px;
   text-transform: uppercase;
 }
+
+/*--------------- Breadcrumb used on Restaurant tab------------*/
 #breadcrumb {
     padding: 10px 40px 16px;
     list-style: none;
@@ -103,6 +112,7 @@ nav h1 a {
   width: 100%;
   background-color: #ccc;
 }
+
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
   width: 100%;
@@ -142,18 +152,21 @@ nav h1 a {
   border: 2px solid #ccc;
   font-family: Arial,sans-serif;
   margin: 15px;
-  min-height: 380px;
-  padding: 0 30px 25px;
+  /*min-height: 380px;*/
+  height: 380;
+  padding: 0 20px 15px;
   text-align: left;
-  width: 270px;
+  /*width: 270px;*/
+  width: width: calc(100% - 40px);
 }
 #restaurants-list .restaurant-img {
-  background-color: #ccc;
+  background-color: #cccccc;
   display: block;
   margin: 0;
-  max-width: 100%;
-  min-height: 248px;
-  min-width: 100%;
+  margin-top: 10px;
+  width: 100%;
+  /*min-height: 248px;*/
+  height: auto;
 }
 #restaurants-list li h1 {
   color: #f18200;
@@ -259,7 +272,7 @@ nav h1 a {
 #reviews-list li {
   background-color: #fff;
     border: 2px solid #f3f3f3;
-  display: block;
+  /*display: block;*/
   list-style-type: none;
   margin: 0 0 30px;
   overflow: hidden;
