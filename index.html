@@ -12,28 +12,30 @@
   <title>NYC Restaurant Reviews</title>
 </head>
 
-<body>
+<body tabindex="-1">
   <header>
-    <nav>
-      <h1><a href="/">Restaurant Reviews</a></h1>
+    <nav tabindex="-1">
+      <h1 tabindex="-1"><a tabindex="1" href="/">Restaurant Reviews</a></h1>
     </nav>
   </header>
 
-    <main id="maincontent">
-      <section id="map-container">
-        <div id="map"></div>
+    <main tabindex="-1" id="maincontent">
+      <section tabindex="-1" id="map-container">
+        <div tabindex="-1" id="map" aria-hidden="true" role="application"></div>
+        <div hidden id="screen-read-this-is-a-map" tabindex="-1">A map of New York City, with a pin at each restaurant location.</div>
       </section>
       <section>
         <div class="filter-options">
           <h2 id="filter-choices">Filter Results</h2>
-            <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+            <select tabindex="2" id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
               <option value="all">All Neighborhoods</option>
             </select>
-            <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+            <select tabindex="3" id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
               <option value="all">All Cuisines</option>
             </select>
         </div>
-        <div class="show_restaurants">
+        <div tabindex="-1" class="show_restaurants" aria-hidden="true">
+        <div hidden id="screen-read-show-restaurants">A graphic card for each restaurant is displayed</div>
           <ul id="restaurants-list"></ul>
         </div>
       </section>
