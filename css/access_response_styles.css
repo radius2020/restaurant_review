@@ -1,11 +1,14 @@
 @charset "utf-8";
 /* CSS Document - Project 1 */
 
+/*#map-container {
+	height: 300px;
+}*/
+
 .filter-options {
 	display: flex;
 	flex-wrap: wrap;
 	height: 100%;
-
 }
 
 #filter-choices {
@@ -29,12 +32,24 @@ div .show_restaurants {
 ul #restaurants-list {
 	width: 100%;
 	display: grid;
-	grid-template-columns: auto;
+	grid-template-columns: 100%;
 	grid-template-rows: auto;
 	padding: 4em 1em
 }
 
+// Focus
+ul #restaurants-list li:focus, a:focus {
+    color: #c00;
+    background: #edd;
+    
+}
+
 @media screen and (min-width: 465px) {
+
+	/*#map-container {
+		height: 400px;
+	}*/
+
 	#neighborhoods-select {
 		width: 30%;
 	}
@@ -50,6 +65,11 @@ ul #restaurants-list {
 }
 
 @media screen and (min-width: 500px) {
+
+	/*#map-container {
+		height: 500px;
+	}*/
+
 	#neighborhoods-select {
 		width: 30%;
 	}
@@ -65,7 +85,7 @@ ul #restaurants-list {
 	#restaurants-list {
 		display: grid;
 		grid-template-columns: 45% 45%;
-		grid-template-rows: auto auto;
+		grid-template-rows: repeat(auto auto);
 	}
 
 	#restaurants-list li {
@@ -77,9 +97,9 @@ ul #restaurants-list {
 @media screen and (min-width: 665px) {
 	#restaurants-list {
 		display: grid;
-		grid-template-columns: repeat(3, auto);
-		grid-template-rows: repeat(2, auto);
-		/*position: absolute;*/
+		grid-template-columns: 30% 30% 30%;
+		grid-template-rows: repeat(auto, auto);
+
 	}
 
 	#restaurants-list li {
