@@ -24,6 +24,8 @@ a {
 a:hover, a:focus {
 	color: #3397db;
 	text-decoration: none;
+  font-weight: bold;
+  background: pink;
 }
 a img{
 	border: none 0px #fff;
@@ -36,16 +38,11 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup,  na
 	display: block;
 }
 
-/* ---------moved section out of the "display: block" group above , including article, aside, etc ------*/
-.section {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 #maincontent {
   background-color: #f3f3f3;
   min-height: 100%;
 }
+
 #footer {
   background-color: #444;
   color: #aaa;
@@ -71,6 +68,7 @@ nav h1 a {
   font-weight: 200;
   letter-spacing: 10px;
   text-transform: uppercase;
+  padding-top: 10px; /*added ks*/
 }
 
 /*--------------- Breadcrumb used on Restaurant tab------------*/

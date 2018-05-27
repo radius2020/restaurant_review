@@ -102,6 +102,9 @@ updateRestaurants = () => {
     } else {
       resetRestaurants(restaurants);
       fillRestaurantsHTML();
+      //setFocus on the first 'View Details' element of first restaurant card
+      /*document.getElementById("restaurants-list").firstElementChild.restaurant.a.select.setFocus;*/
+      /*document.getElementById("restaurants-list").firstElementChild.setFocus;*/
     }
   })
 }
@@ -123,7 +126,7 @@ resetRestaurants = (restaurants) => {
 
 /**
  * Create all restaurants HTML and add them to the webpage.
- */
+
 fillRestaurantsHTML = (restaurants = self.restaurants) => {
   const ul = document.getElementById('restaurants-list');
   restaurants.forEach(restaurant => {
@@ -131,36 +134,68 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
   });
   addMarkersToMap();
 }
+*/
+
+/**
+ * Create all restaurants HTML and add them to the webpage.
+ */
+fillRestaurantsHTML = (restaurants = self.restaurants) => {
+  let tabIndex = 4;
+  const ul = document.getElementById('restaurants-list');
+  restaurants.forEach(restaurant => {
+    ul.append(createRestaurantHTML(restaurant, tabIndex));
+    tabIndex++;
+    /*do i need to tab to the labels for aria support?*/
+    /*tabIndex = tabIndex + 10;*/
+  });
+  addMarkersToMap();
+}
+
+
+
 
 /**
  * Create restaurant HTML.
  */
-createRestaurantHTML = (restaurant) => {
+createRestaurantHTML = (restaurant ,tabIndex) => {
+  /*create aria group here in li element?, so screen reader can read the whole card, but just tab to view details*/
   const li = document.createElement('li');
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  /*image.setAttribute('tabindex', tabIndex.toString());*/
+  image.setAttribute('caption', 'Dining atmosphere at ' + restaurant.name);
+  image.setAttribute('aria-label', 'Dining atmosphere at ' + restaurant.name);
+  image.setAttribute('alt', 'Dining atmosphere at ' + restaurant.name);
   li.append(image);
+  /*tabIndex++;*/
 
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;
+  /*name.setAttribute('tabindex', tabIndex.toString());*/
+  name.setAttribute('aria-label', restaurant.name);
   li.append(name);
+ /* tabIndex++;*/
 
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;
+  neighborhood.setAttribute('aria-label', restaurant.neighborhood);
   li.append(neighborhood);
 
   const address = document.createElement('p');
   address.innerHTML = restaurant.address;
+  address.setAttribute('aria-label', restaurant.address);
   li.append(address);
 
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
+  more.setAttribute('tabindex', tabIndex.toString());
+  more.setAttribute('aria-label', 'Go to details and reviews for ' + restaurant.name);
   more.href = DBHelper.urlForRestaurant(restaurant);
   li.append(more)
 
-  return li
+  return li;
 }
 
 /**
@@ -175,4 +210,8 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     });
     self.markers.push(marker);
   });
+}
+
+firstFocusElement = () => {
+  document.getElementById("neighborhoods-select").setfocus;
 }
