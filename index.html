@@ -21,26 +21,25 @@
 
     <main tabindex="-1" id="maincontent">
       <section tabindex="-1" id="map-container">
-        <div tabindex="-1" id="map" aria-hidden="true" role="application"></div>
-        <div hidden id="screen-read-this-is-a-map" tabindex="-1">A map of New York City, with a pin at each restaurant location.</div>
+        <div tabindex="-1" id="map" role="application" aria-label="Map of New York City, with restaurants."></div>
       </section>
       <section>
         <div class="filter-options">
-          <h2 id="filter-choices">Filter Results</h2>
-            <select tabindex="2" id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+          <h2 id="filter-results-label">Filter Results</h2>
+            <select tabindex="2" id="neighborhoods-select" name="neighborhoods" aria-label="Choose a neighborhood" onchange="updateRestaurants()">
               <option value="all">All Neighborhoods</option>
             </select>
-            <select tabindex="3" id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+            <select tabindex="3" id="cuisines-select" name="cuisines" aria-label="Choose a cuisine" onchange="updateRestaurants()">
               <option value="all">All Cuisines</option>
             </select>
         </div>
-        <div tabindex="-1" class="show_restaurants" aria-hidden="true">
-        <div hidden id="screen-read-show-restaurants">A graphic card for each restaurant is displayed</div>
+        <div tabindex="-1" class="show_restaurants" aria-label="A graphic card for each restaurant follows">
           <ul id="restaurants-list"></ul>
         </div>
       </section>
     </main>
 
+    <script type="application/javascript" charset="utf-8" src="js/app.js"></script>
     <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
     <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap"></script>
