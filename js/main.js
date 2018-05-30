@@ -10,6 +10,7 @@ var markers = []
 document.addEventListener('DOMContentLoaded', (event) => {
   fetchNeighborhoods();
   fetchCuisines();
+  document.getElementById("neighborhoods-select").setfocus;
 });
 
 /**
@@ -169,14 +170,11 @@ createRestaurantHTML = (restaurant ,tabIndex) => {
   image.setAttribute('aria-label', 'Dining atmosphere at ' + restaurant.name);
   image.setAttribute('alt', 'Dining atmosphere at ' + restaurant.name);
   li.append(image);
-  /*tabIndex++;*/
 
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;
-  /*name.setAttribute('tabindex', tabIndex.toString());*/
   name.setAttribute('aria-label', restaurant.name);
   li.append(name);
- /* tabIndex++;*/
 
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;

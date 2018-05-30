@@ -6,7 +6,7 @@
 	flex-wrap: wrap;
 	height: 100%;
 }
-#filter-choices {
+#filter-results-label {
 	padding-top: 8px;
 }
 #neighborhoods-select {
@@ -17,8 +17,8 @@
 }
 div .show_restaurants {
 	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
+	/*display: flex;
+	flex-wrap: wrap;*/
 }
 
 ul #restaurants-list {
@@ -29,6 +29,11 @@ ul #restaurants-list {
 	/*padding: 4em 1em;  em is = to font-size! so 12pt*/
 }
 
+.footer_link {
+	color: orange;
+	font-weight: bold;
+}
+
 @media screen and (min-width: 465px) {
 	#neighborhoods-select {
 		width: 30%;
@@ -36,10 +41,29 @@ ul #restaurants-list {
 	#cuisines-select {
 		width: 30%;
 	}
-	#filter-choices {
+	#filter-results-label {
 		padding-top: 3px;
 		width: 20%;
 		margin: 0;
+	}
+	.inside {
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%
+	}
+	#restaurant-container, #reviews-container {
+	  border-bottom: 1px solid #d9d9d9;
+	  border-top: 1px solid #fff;
+	  /*padding: 140px 40px 30px;*/
+	  width: 100%;
+	}
+	.inside #map-container {
+	  background: blue none repeat scroll 0 0;
+	  height: 20%;
+	  position: fixed;
+	  right: 0;
+	  top: 80px;
+	  width: 100%;
 	}
 }
 
@@ -50,8 +74,9 @@ ul #restaurants-list {
 		#cuisines-select {
 		width: 30%;
 	}
-	#filter-choices {
+	#filter-results-label {
 		padding-top: 3px;
+		padding-left: 15px;
 		width: 20%;
 	}
 	#restaurants-list {
@@ -63,6 +88,21 @@ ul #restaurants-list {
 		padding-top: 14%;
 		position: relative;
 	}
+	#restaurant-container, #reviews-container {
+	  border-bottom: 1px solid #d9d9d9;
+	  border-top: 1px solid #fff;
+	  padding: 140px 40px 30px;
+	  width: 50%;
+	}
+	.inside #map-container {
+	  background: blue none repeat scroll 0 0;
+	  height: 87%;
+	  position: fixed;
+	  right: 0;
+	  top: 80px;
+	  width: 50%;
+	}
+
 }
 
 @media screen and (min-width: 665px) {
