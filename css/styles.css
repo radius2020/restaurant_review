@@ -104,6 +104,13 @@ nav h1 a:hover, a:focus{
   padding: 0 10px;
   width: 200px;
 }
+.filter-options select:focus {
+  font-weight: bold;
+  border: 5px solid #19a5bf;
+  box-shadow: 0px 0px 3px 3px 
+  #5c0e60;
+
+}
 
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
@@ -223,7 +230,7 @@ nav h1 a:hover, a:focus{
   position: fixed;
   right: 0;
   top: 80px;
-  width: 50%;
+  width: 100%;
 }
 .inside #map {
   background-color: #ccc;
@@ -267,8 +274,8 @@ nav h1 a:hover, a:focus{
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  padding: 140px 40px 30px;
-  width: 50%;
+  /*padding: 140px 40px 30px;
+  width: 50%;*/
 }
 #reviews-container {
   padding: 30px 40px 80px;
