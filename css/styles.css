@@ -64,6 +64,9 @@ nav h1 a {
   margin: 0 5px 0;
   padding: 5px;
 }
+.inside nav ul a {
+    font-size: 14pt;
+}
 
 nav h1 a:hover, a:focus{
   color: #252831; /*black*/
@@ -78,6 +81,7 @@ nav h1 a:hover, a:focus{
   width: 100%;
   background-color: #ccc;
 }
+
 
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
@@ -218,6 +222,11 @@ nav h1 a:hover, a:focus{
 }
 
 /* ====================== Restaurant Details ====================== */
+
+body .inside {
+  display: flex;
+  flex-wrap: wrap;
+}
 .inside header {
   position: fixed;
   top: 0;
@@ -226,8 +235,8 @@ nav h1 a:hover, a:focus{
 }
 .inside #map-container {
   background: blue none repeat scroll 0 0;
-  height: 87%;
-  position: fixed;
+  /*height: 87%;
+  position: fixed;*/
   right: 0;
   top: 80px;
   width: 100%;
@@ -242,6 +251,8 @@ nav h1 a:hover, a:focus{
   position: absolute;
   width: 50%;
 }
+
+/*-----------------------------home tab-------------*/
 #restaurant-name {
   color: #f18200;
   font-family: Arial,sans-serif;
@@ -271,14 +282,17 @@ nav h1 a:hover, a:focus{
   text-transform: uppercase;
 	width: 90%;
 }
-#restaurant-container, #reviews-container {
+/*
+.inside #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
   /*padding: 140px 40px 30px;
-  width: 50%;*/
+  width: 50%;
+  padding-top: 200px;
+  width 100%;
 }
 #reviews-container {
-  padding: 30px 40px 80px;
+  padding: 30px 40px 80px;*/
 }
 #reviews-container h2 {
   color: #f58500;
