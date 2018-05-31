@@ -30,13 +30,14 @@ fetchRestaurantFromURL = (callback) => {
   }
   const id = getParameterByName('id');
   if (!id) { // no id found in URL
-    error = 'No restaurant id in URL'
+    error = '**************No restaurant id in URL';
+    console.log(error);
     callback(error, null);
   } else {
     DBHelper.fetchRestaurantById(id, (error, restaurant) => {
       self.restaurant = restaurant;
       if (!restaurant) {
-        console.error(error);
+        console.error('fetchRestaurantById: ' + error);
         return;
       }
       fillRestaurantHTML();
