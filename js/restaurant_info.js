@@ -30,13 +30,14 @@ fetchRestaurantFromURL = (callback) => {
   }
   const id = getParameterByName('id');
   if (!id) { // no id found in URL
-    error = 'No restaurant id in URL'
+    error = '**************No restaurant id in URL';
+    console.log(error);
     callback(error, null);
   } else {
     DBHelper.fetchRestaurantById(id, (error, restaurant) => {
       self.restaurant = restaurant;
       if (!restaurant) {
-        console.error(error);
+        console.error('fetchRestaurantById: ' + error);
         return;
       }
       fillRestaurantHTML();
@@ -98,6 +99,7 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
   const title = document.createElement('h2');
   title.innerHTML = 'Reviews';
+  title.setAttribute('id','reviews-label');
   container.appendChild(title);
 
   if (!reviews) {
@@ -118,6 +120,7 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  */
 createReviewHTML = (review) => {
   const li = document.createElement('li');
+  
   const name = document.createElement('p');
   name.innerHTML = review.name;
   li.appendChild(name);
