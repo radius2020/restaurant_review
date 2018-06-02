@@ -171,7 +171,7 @@ createRestaurantHTML = (restaurant ,tabIndex) => {
   image.setAttribute('alt', 'Dining atmosphere at ' + restaurant.name);
   li.append(image);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h2');
   name.innerHTML = restaurant.name;
   name.setAttribute('aria-label', restaurant.name);
   li.append(name);
