@@ -40,9 +40,13 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup,  na
   color: #aaa;
   font-size: 8pt;
   letter-spacing: 1px;
-  padding: 25px;
+  padding: 25px 0;
   text-align: center;
   text-transform: uppercase;
+}
+
+#footer span {
+  display: block;
 }
 
 /* ====================== Navigation ====================== */
@@ -153,7 +157,7 @@ nav h1 a:hover, a:focus{
   /*min-height: 248px;*/
   height: auto;
 }
-#restaurants-list li h1 {
+#restaurants-list li h2 {
   color: #f18200;
   font-family: Arial,sans-serif;
   font-size: 14pt;
