@@ -44,16 +44,21 @@ self.addEventListener('install', function(e) {
 	); // end e.waitUntil
 });
 
-/*
-self.addEventListener('install', function(e) {
-	console.log("[Service Worker] installed");
-});
-*/
-
 self.addEventListener('activate', function(e) {
 	console.log("[Service Worker] activated");
 });
+
 self.addEventListener('fetch', function(e) {
-	/*console.log("[Service Worker] fetch:", e.request.url);*/
+	console.log("[Service Worker] fetch:", e.request.url);
+
+	e.respondWith(
+		caches.match(e.request).then(function(response) {
+			if (response) {
+				console.log('[ServiceWorker] found in cache',e.request.url);
+				return response;
+			}
+			return fetch(e.request);
+		})
+	)
 });
 
